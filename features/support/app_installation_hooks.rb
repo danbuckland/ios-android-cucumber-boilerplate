@@ -8,11 +8,13 @@ Before do |scenario|
   scenario = scenario.scenario_outline if scenario.respond_to?(:scenario_outline)
 
   feature = scenario.feature
-  if FeatureMemory.feature != feature || ENV['RESET_BETWEEN_SCENARIOS'] == '1'
+  # Changes default behaviour to only reinstall on new test runs to encourage
+  # separating scenarios into multiple feature files.
+  if FeatureMemory.feature == nil || ENV['RESET_BETWEEN_SCENARIOS'] == '1'
     if ENV['RESET_BETWEEN_SCENARIOS'] == '1'
       log 'New scenario - reinstalling apps'
     else
-      log 'First scenario in feature - reinstalling apps'
+      log 'First scenario of new test run - reinstalling apps'
     end
 
     uninstall_apps
