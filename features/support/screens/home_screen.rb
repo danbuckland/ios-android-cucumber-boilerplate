@@ -14,8 +14,6 @@ class HomeScreen < Android
   end
 
   def check_version_no
-    wait_for_element_exists("* id:'home_version_text'", :timeout => 2,
-                            :screenshot_on_error => false)
     query("* id:'home_version_text'", :text).first
   end
 

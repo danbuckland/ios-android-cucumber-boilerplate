@@ -1,3 +1,4 @@
 Gemfile.lock
 screenshot*.png
 test_servers
+.irb-history
