@@ -5,11 +5,27 @@ AfterConfiguration do |config|
 end
 
 Before do |scenario|
-  scenario = scenario.scenario_outline if scenario.respond_to?(:scenario_outline)
+  ##
+  # Create page objects which allows methods methods to be called in step
+  # definitions the following way:
+  #
+  #   @android.wait_for_progress_to_complete
+  #   @app.clear_settings
+  #   @screen.home.await
+  #
+  ##
+  @android ||= page(Android)
+  @app     ||= page(App)
+	@screen  ||= page(Screens)
 
+
+  scenario = scenario.scenario_outline if scenario.respond_to?(:scenario_outline)
   feature = scenario.feature
+
+  ##
   # Changes default behaviour to only reinstall on new test runs to encourage
   # separating scenarios into multiple feature files.
+  ##
   if FeatureMemory.feature == nil || ENV['RESET_BETWEEN_SCENARIOS'] == '1'
     if ENV['RESET_BETWEEN_SCENARIOS'] == '1'
       log 'New scenario - reinstalling apps'
