@@ -3,7 +3,7 @@
 # An example is included below.
 ##
 
-class App < Android
+class App < Calabash::ABase
 
   def clear_settings
     unless get_preferences("prefs")["user"] == nil
