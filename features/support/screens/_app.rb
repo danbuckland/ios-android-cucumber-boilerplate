@@ -3,9 +3,7 @@
 # An example is included below.
 ##
 
-require 'calabash-android/abase'
-
-class App < Calabash::ABase
+class App < Android
 
   def clear_settings
     unless get_preferences("prefs")["user"] == nil

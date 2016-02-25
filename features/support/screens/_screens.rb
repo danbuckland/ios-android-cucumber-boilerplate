@@ -3,11 +3,12 @@
 # Add your own screens below.
 ##
 
-class Screens < Android
+class Screens < Calabash::ABase
+
 	def home
 		@home ||= page(HomeScreen)
 	end
 
 	# Your screens here
-	
+
 end

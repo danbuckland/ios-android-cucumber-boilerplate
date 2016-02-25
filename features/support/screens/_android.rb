@@ -3,8 +3,6 @@
 # A non working example is included below.
 ##
 
-require 'calabash-android/abase'
-
 class Android < Calabash::ABase
 
   def wait_for_progress_to_complete
