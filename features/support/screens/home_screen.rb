@@ -3,7 +3,7 @@
 # Android class defined in '_android.rb'
 ##
 
-class HomeScreen < Android
+class HomeScreen < App
 
   def trait
     'MainActivity'
