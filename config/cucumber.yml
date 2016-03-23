@@ -1,0 +1,6 @@
+##
+# Separate iOS and Android profiles to require platform specific page objects
+##
+
+android: PLATFORM=android -r features/support -r features/android -r features/step_definitions
+ios: PLATFORM=ios APP_BUNDLE_PATH=prebuilt/WordPress-cal.app  -r features/support -r features/ios/support -r features/ios/helpers -r features/step_definitions -r features/ios/pages
