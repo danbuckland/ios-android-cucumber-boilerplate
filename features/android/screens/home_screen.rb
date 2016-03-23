@@ -1,6 +1,6 @@
 ##
 # Screen specific methods should be added to a class which inherits from the
-# Android class defined in '_android.rb'
+# App class defined in '_app.rb'
 ##
 
 class HomeScreen < App

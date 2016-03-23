@@ -14,9 +14,9 @@ Before do |scenario|
   #   @screen.home.await
   #
   ##
-  @android ||= page(Android)
-  @app     ||= page(App)
-	@screen  ||= page(Screens)
+  @platform ||= page(Android)
+  @app      ||= page(App)
+	@screen   ||= page(Screens)
 
 
   scenario = scenario.scenario_outline if scenario.respond_to?(:scenario_outline)
