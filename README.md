@@ -4,10 +4,8 @@ Boilerplate code for starting a new iOS and Android cross-platform BDD project u
 
 One set of feature files, one set of step definitions, platform specific page objects and methods.
 
+Run on iOS: `cucumber -p ios`  
 Run on Android: `calabash-android run build/example.apk -p android`
-
-Run on iOS `cucumber -p ios`
-
 
 
 ## Documentation
