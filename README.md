@@ -39,19 +39,19 @@ The following files and folders are specific to the **example** application, or 
 All feature files should be placed in the `features/` directory and use the `.feature` extension. Features should be UI agnostic, i.e. they don't refer to specific on screen elements, and simultaneously describe the behaviours of the app on both platforms.
 
 #### Add step definitions for your feature
-Step definitions are platform specific, i.e. they are different for iOS and Android, and should be placed in the respective `features/android/step_definitions` or `features/ios/step_definitions` directories and use the `.rb` extension.
+Step definitions are platform agnostic, i.e. they are the same for both iOS and Android, and should be placed in the `features/step_definitions` directory and use the `.rb` extension.
 
 #### Create your first page object
-Page objects are platform specific and appear in the `features/android/screens` or `features/ios/screens` directories. The **HomeScreen** object in each can be renamed and used as your own page object. For iOS:
+Page objects are platform specific and appear in the `features/support/android/screens` or `features/support/ios/screens` directories. The **HomeScreen** object in each can be renamed and used as your own page object. For iOS:
 
-  1. Rename the file `features/ios/screens/home_screen.rb` to match with your own screen name.
+  1. Rename the file `features/support/ios/screens/home_screen.rb` to match with your own screen name.
   2. In the renamed file, rename the `HomeScreen` class to match your screen name.
-  3. In `features/ios/screens/_screens.rb` rename the `home` method to the name you want to use for your screen when calling its methods.
+  3. In `features/support/ios/screens/_screens.rb` rename the `home` method to the name you want to use for your screen when calling its methods.
   4. Change the line `@home ||= page(HomeScreen)` to reference your method name and class name.
 
 #### Add additional page objects
 You should create additional page objects with screen specific methods for each new screen/activity/dialog in your application:
-  1. All page objects should be added to the `features/ios/screens/` and `features/android/screens/` directories and use the `.rb` extension.
+  1. All page objects should be added to the `features/support/ios/screens/` and `features/support/android/screens/` directories and use the `.rb` extension.
   2. Each page object should contain a single class matching your screen name.
   3. Add a new method to the platform specific `_screens.rb` file with the name you want to use for your screen when calling its methods.
   4. Add the line `@yourscreen ||= page(YourScreen)` to the new method referencing your page object's class and the name by which you want to refer to the screen.
