@@ -1,0 +1,6 @@
+##
+# Separate iOS and Android profiles to require platform specific page objects
+##
+
+android: PLATFORM=android -r features/support -r features/android -r features/step_definitions
+ios: PLATFORM=ios APP_BUNDLE_PATH=build/example.app  -r features/support -r features/ios -r features/step_definitions
