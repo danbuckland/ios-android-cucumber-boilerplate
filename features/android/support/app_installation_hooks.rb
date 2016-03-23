@@ -9,7 +9,7 @@ Before do |scenario|
   # Create page objects which allows methods methods to be called in step
   # definitions the following way:
   #
-  #   @android.wait_for_progress_to_complete
+  #   @platform.wait_for_progress_to_complete
   #   @app.clear_settings
   #   @screen.home.await
   #
