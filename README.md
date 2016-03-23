@@ -1,5 +1,4 @@
-Boilerplate code for starting a new BDD Android project using Cucumber with
-Calabash and a Page Object Model structure.
+Boilerplate code for starting a new iOS and Android cross-platform BDD project using Cucumber with Calabash and a Page Object Model structure.
 
 
 ## Documentation
