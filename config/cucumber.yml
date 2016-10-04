@@ -2,5 +2,17 @@
 # Separate iOS and Android profiles to require platform specific page objects
 ##
 
+<% iosdevice =
+  "DEVICE_TARGET='659efc890668bffd46132ee8938b5af533b04d23'
+  BUNDLE_ID='com.blocksolid.example'
+  DEVICE_ENDPOINT='http://10.0.0.52:37265'
+  CODE_SIGN_IDENTITY='A443A2898B4D63894CA453F33574843835D31B6D'"
+%>
+
+<% iossimulator =
+  "DEVICE_TARGET='4F3865CE-4711-47DF-9545-D0DC417EF2C6'
+  APP='build/example.app'"
+%>
+
 android: PLATFORM=android -r features/support -r features/support/android -r features/step_definitions -e features/support/ios
-ios: PLATFORM=ios APP_BUNDLE_PATH=build/example.app  -r features/support -r features/support/ios -r features/step_definitions -e features/support/android
+ios: PLATFORM=ios <%= iossimulator %> -r features/support -r features/support/ios -r features/step_definitions -e features/support/android
